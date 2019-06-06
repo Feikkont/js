@@ -1,0 +1,6 @@
+var celsius = prompt('Задать температуру в градусах по Цельсию');
+var fahrenheit = (9 / 5) * celsius + 32;
+alert('Температура по Фаренгейту равна ' + fahrenheit + ' градусов');
+var name = ' "Василий" ';
+var admin = name;
+alert(admin);
