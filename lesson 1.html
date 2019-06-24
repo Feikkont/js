@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lesson3.js"></script>
+    <style>
+        body {
+            margin: 0 auto;
+        }
+        
+        .table {
+            border: 1px solid black;
+            vertical-align: center;
+            text-align: center;
+        }
+
+        .white {
+            background-color: white;
+            width: 50px;
+            height: 50px;
+        }
+
+        .black {
+            background-color: black;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+<h1>Пример: </h1>
+<table class="table">
+    <tr>
+        <td class="white"></td>
+        <td class="">А</td>
+        <td class="white">B</td>
+        <td class="">C</td>
+        <td class="white">D</td>
+        <td class="">E</td>
+        <td class="white">F</td>
+        <td class="">G</td>
+        <td class="white">H</td>
+        <td class=""></td>
+    </tr>
+    <tr>
+        <td class="">1</td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white">1</td>
+    </tr>
+    <tr>
+        <td class="white">2</td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="">2</td>
+    </tr>
+    <tr>
+        <td class="">3</td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white">3</td>
+    </tr>
+    <tr>
+        <td class="white">4</td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="">4</td>
+    </tr>
+    <tr>
+        <td class="">5</td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white">5</td>
+    </tr>
+    <tr>
+        <td class="white">6</td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="">6</td>
+    </tr>
+    <tr>
+        <td class="">7</td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white">7</td>
+    </tr>
+    <tr>
+        <td class="white">8</td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="black"></td>
+        <td class="white"></td>
+        <td class="">8</td>
+    </tr>
+    <tr>
+        <td class=""></td>
+        <td class="white">А</td>
+        <td class="">B</td>
+        <td class="white">C</td>
+        <td class="">D</td>
+        <td class="white">E</td>
+        <td class="">F</td>
+        <td class="white">G</td>
+        <td class="">H</td>
+        <td class="white"></td>
+    </tr>
+</table>
+<div id="board"></div>
+
+<script>
+    var $board = document.getElementById('board');
+    var $text = document.createElement('h1');
+    var $table = document.createElement('table');
+    $table.classList.add('table');
+    $text.innerHTML = 'Скрипт:';
+    for (var i = 0; i < 10; i++) {
+        var $row = document.createElement('tr');
+
+        for (var j = 0; j < 10; j++) {
+
+            var $cell = document.createElement('td');
+            if (i % 2 == j % 2) {
+                $cell.classList.add('white');
+            } else {
+                $cell.classList.add('black');
+            }
+            if (i == 0 || i == 9 || j == 0 || j == 9) {
+                $cell.classList.remove('black');
+                $cell.textContent = 'А';
+            }
+            $row.appendChild($cell);
+        }
+        $table.appendChild($row);
+    }
+    $board.appendChild($text);
+    $board.appendChild($table);
+</script>
+</body>
+</html>
